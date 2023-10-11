@@ -16,10 +16,18 @@ let phon_no_id;
 let from;
 
 // add webhook integration to Oracle Cloud
+//const webhook = new WebhookClient({
+//    channel: {
+//        url: 'https://oda-4f59ae2636274b4bbc494828c182d394-da4.data.digitalassistant.oci.oraclecloud.com/connectors/v2/listeners/webhook/channels/6f638026-22d6-417c-9689-9605c63f6c2c',
+//        secret: 'vekfonOQKLPiwvqENMgF6baV0ElBjvXX'
+//    }
+//});
+
+// add webhook integration to Oracle Cloud
 const webhook = new WebhookClient({
     channel: {
-        url: 'https://oda-4f59ae2636274b4bbc494828c182d394-da4.data.digitalassistant.oci.oraclecloud.com/connectors/v2/listeners/webhook/channels/6f638026-22d6-417c-9689-9605c63f6c2c',
-        secret: 'vekfonOQKLPiwvqENMgF6baV0ElBjvXX'
+        url: 'https://oda-22c230bac6824685beccb24b591697be-da12.data.digitalassistant.oci.oraclecloud.com/connectors/v2/listeners/webhook/channels/d13d514c-50d2-485a-a440-d22fc1301f34',
+        secret: 'iOc82R606LMpK4isVHjGytrUHAphBXRF'
     }
 });
 
@@ -107,3 +115,4 @@ app.get("/", (req, res) => {
 });
 
 console.log("commit");
+console.log(mytoken);
