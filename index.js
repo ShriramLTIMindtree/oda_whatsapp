@@ -26,8 +26,8 @@ let from;
 // add webhook integration to Oracle Cloud
 const webhook = new WebhookClient({
     channel: {
-        url: 'https://oda-22c230bac6824685beccb24b591697be-da12.data.digitalassistant.oci.oraclecloud.com/connectors/v2/listeners/webhook/channels/d13d514c-50d2-485a-a440-d22fc1301f34',
-        secret: 'iOc82R606LMpK4isVHjGytrUHAphBXRF'
+        url: 'https://oda-22c230bac6824685beccb24b591697be-da12.data.digitalassistant.oci.oraclecloud.com/connectors/v2/listeners/webhook/channels/72453a7e-e00b-49b5-802b-4fb929277bbf',
+        secret: '4QvKktjbaxX0JRzQ3kciduCU1Ca9g1VY'
     }
 });
 
@@ -54,7 +54,6 @@ app.get("/webhook", (req, res) => {
         }
     }
 });
-
 webhook.on(WebhookEvent.MESSAGE_RECEIVED, recievedMessage => {
     console.log('Received a message from ODA, processing message before sending to WhatsApp. *****************>');
     console.log(recievedMessage.messagePayload.text);
@@ -75,7 +74,7 @@ webhook.on(WebhookEvent.MESSAGE_RECEIVED, recievedMessage => {
     });
 });
 
-app.post("/webhook", (req, res) => { //i want some 
+app.post("/webhook", (req, res) => { 
     let body_param = req.body;
     console.log(JSON.stringify(body_param, null, 2));
     if (body_param.object) {
@@ -116,3 +115,8 @@ app.get("/", (req, res) => {
 
 console.log("commit");
 console.log(mytoken);
+
+const PORT=5051;
+app.listen(PORT, ()=>{
+    console.log('server running on port no- '+ PORT)
+});
